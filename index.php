@@ -6,7 +6,7 @@
 </head>
 <body>
     <h3 align="right" style="margin-right:20px;"><a href=login.php>Admin Login</a></h3>
-   <h1 align="center">Welcome to Student Management System</h1>
+   <h1 align="center">Welcome To Student Management System</h1>
    
    <form method="post" action="index.php">
    <table style="width:30%; background: linear-gradient(to right , #db1bf6 ,#19d7f8);" align="center" border="1">
@@ -23,6 +23,12 @@
                     <option value="4">4th</option>
                     <option value="5">5th</option>
                     <option value="6">6th</option>
+                    <option value="7">7th</option>
+                    <option value="8">8th</option>
+                    <option value="9">9th</option>
+                    <option value="10">10th</option>
+                    <option value="11">11th</option>
+                    <option value="15">12th</option>
                </select>
            </td>
        </tr>
