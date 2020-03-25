@@ -1,0 +1,31 @@
+What will be the Project About?
+1.This  is a Projects on Students Management System.
+2.In which through Admin Panel everthing about students 
+    can be maintain specially information of students
+3.Students can see their details from the home page 
+    of site by entering their roll no.
+    
+    FEATURES
+    1. Login,logout for admin
+    2.On home page show students details by entering roll no.
+    3. Students Details
+        1. Add new Students Details
+        2. Update Existing Details
+        3. Delete Students Details
+
+
+DataBase Design
+table
+1    Admin
+        -id
+        -username
+        -password
+2   Student
+        -id
+        -rollno
+        -name
+        -city
+        -parents contact
+        -standerd
+        -image
+        
