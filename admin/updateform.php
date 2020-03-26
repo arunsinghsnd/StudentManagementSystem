@@ -16,12 +16,12 @@ session_start();
     include('header.php');
     include('titlehead.php');
     include('../dbcon.php');
-    $sid = $_get['sid'];
+    $sid = $_GET['sid'];
 
     $sql="SELECT *  FROM `student` WHERE `id`='$sid' ";
     $run=mysqli_query($con,$sql);
     
-    $data=mysqli_fetch_assco($run);
+    $data=mysqli_fetch_assoc($run);
 
 ?>
 <form method="post" action="updatedata.php" enctype="multipart/form-data">
@@ -54,7 +54,7 @@ session_start();
             <td colspan="2" align="center">
             <input type="hidden" name="sid" value="<?php echo $data['id'];?>"/>
             
-            <input type="submit" name="submit" value="Submit"></td>
+            <input type="submit" name="submit" value="Submit"/></td>
         </tr>
     </table>
 </form>

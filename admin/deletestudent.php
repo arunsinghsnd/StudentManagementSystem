@@ -44,14 +44,14 @@ session_start();
     </tr>
     <?php
 
-    if(isset($_post['submit']))
+    if(isset($_POST['submit']))
     {
         include('../dbcon.php');
         
-        $standerd = $_post['standerd'];
-        $name = $_post['stuname'];
+        $standerd = $_POST['standerd'];
+        $name = $_POST['stuname'];
         
-        $sql="SELECT * FROM `student` WHERE `standerd`='' AND `name` LIKE '%name%'";  
+        $sql="SELECT * FROM `student` WHERE `standerd`='$standerd' AND `name` LIKE '%$name%'";  
     
         $run=mysqli_query($con,$sql);
         
@@ -68,17 +68,16 @@ session_start();
                 ?>
                 <tr align="center">
                     <td><?php echo $count; ?></td>
-                    <td><img src="../dataimg/<?php echo $data['image']; ?>" /></td>
+                    <td><img src="../dataimg/<?php echo $data['image']; ?>" style="max-width:100px;" /></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['rollno']; ?></td>
-                    <td>><a href="deleteform.php?sid=<?php echo $data['id'];?>">Delete</a></td>
+                    <td><a href="deleteform.php?sid=<?php echo $data['id'];?>">Delete</a></td>
                 </tr>
                 <?php
             }
         }
     
     }
-
 
 
 ?>

@@ -2,11 +2,11 @@
 
 include('../dbcon.php');
         
-        $id=$_request['sid'];
+        $id=$_REQUEST['sid'];
         
         $qry="DELETE FROM `student` WHERE `id`='$id';"; 
         
-        $run = myqli_query($con,$qry);
+        $run = mysqli_query($con,$qry);
         
         if($run == true)
         {
@@ -17,5 +17,7 @@ include('../dbcon.php');
         </script>
        <?php
         }
-        
+     
+
+
 ?>

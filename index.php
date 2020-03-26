@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <title>Student Management System</title>
 </head>
-<body>
-    <h3 align="right" style="margin-right:20px;"><a href=login.php>Admin Login</a></h3>
-   <h1 align="center">Welcome To Student Management System</h1>
+<body style="background-color: orange">
+        <h3 align="right" style="margin-right:20px;"><a href=login.php>Admin Login</a></h3>
+        <h1 align="center">Welcome To Student Management System</h1>
    
-   <form method="post" action="index.php">
-   <table style="width:30%; background: linear-gradient(to right , #db1bf6 ,#19d7f8);" align="center" border="1">
+       <form method="post" action="index.php">
+       <table style="width:30%; background: linear-gradient(to right , #db1bf6 ,#19d7f8);" align="center" border="1">
        <tr>
            <td colspan="2" align="center">Student Information</td>
        </tr>
        <tr>
            <td align="left">Choose Standerd</td>
            <td>
-               <select>
+               <select name="std" required>
                     <option value="1">1st</option>
                     <option value="2">2nd</option>
                     <option value="3">3th</option>
@@ -43,36 +43,19 @@
        </tr>
    </table>
    </form>
-    
 </body>
 </html>
 <?php 
-
-
-
-if(isset($_post['submit']))
-{
-    $standerd=$_post['std'];
-    $rollno=$_post['rollno'];
+if(isset($_POST['submit']))
+    {
+    $standerd=$_POST['std'];
+    $rollno=$_POST['rollno'];
     
     include('dbcon.php');
     include('function.php');
     
     
     showdetails($standerd , $rollno);
-    
-    
-    
-    
-    
-    
-    
-    
-}
-
-
-
-
-
+    }
 
 ?>

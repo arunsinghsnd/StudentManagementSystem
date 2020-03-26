@@ -1,17 +1,17 @@
 <?php
-
-function showdetails($standerd , $rollno)
-{
-    include('dbcon.php');
-    
-    $sql="SELECT * FROM `student` WHERE `rollno` ='$rollno' AND `standerd`='$standerd' ";
-    $run=mysqli_query($con ,$sql);
-    
-    
-    if(mysqli_num_rows($run)>0)
+    function showdetails($standerd , $rollno)
     {
-        $data=mysqli_fetch_assco($run);
-        ?>
+        include('dbcon.php');
+    
+        $sql="SELECT * FROM `student` WHERE `rollno` ='$rollno' AND `standerd`='$standerd' ";
+        $run=mysqli_query($con ,$sql);
+    
+    
+        if(mysqli_num_rows($run)>0)
+        {
+        
+            $data=mysqli_fetch_assoc($run);
+            ?>
         
         
         <table border="1" style="width:50%; margin-top:20px;" align="center">
@@ -39,13 +39,13 @@ function showdetails($standerd , $rollno)
                 <th>City</th>
                 <td><?php echo $data['city'];?></td>
             </tr>
-        </table><?php
+        </table>
+        
+        <?php
     }
     else
     {
         echo "<script>alert('No Student Found.');</script>";
-    }
+    }?>
 }
 
-
-?>

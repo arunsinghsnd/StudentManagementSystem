@@ -26,8 +26,7 @@ if(isset($_SESSION['uid']))
                <td colspan="2" align="center"><input type="submit" name="login" value="Login"></td>
            </tr>
        </table>
-   </form>
-    
+   </form>  
 </body>
 </html>
 <?php

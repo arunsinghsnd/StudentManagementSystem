@@ -52,24 +52,24 @@ session_start();
 </html>
 
 <?php
-    if(isset($_post['submit']))
+    if(isset($_POST['submit']))
     {
         include('../dbcon.php');
-        $rollno = $_post['rollno'];
-        $name  = $_post['name'];
-        $city  = $_post['city'];
-        $pcon  = $_post['pcon'];
-        $std   = $_post['std'];
-        $imagename = $_files['simg']['name'];
-        $tempname = $_files['simg']['tmp_name'];
+        $rollno = $_POST['rollno'];
+        $name  = $_POST['name'];
+        $city  = $_POST['city'];
+        $pcon  = $_POST['pcon'];
+        $std   = $_POST['std'];
+        $imagename = $_FILES['simg']['name'];
+        $tempname = $_FILES['simg']['tmp_name'];
         
         move_uploaded_file($tempname,"../dataimg/$imagename");
         
         
         
-        $qry="INSERT INTO `student`(`rollno`, `name`, `city`, `pcont`, `standerd` ,`image`) VALUES ('$rollno', '$name','$city','$pcon','$std','$tempname')";
+        $qry="INSERT INTO `student`(`rollno`, `name`, `city`, `pcont`, `standerd` ,`image`) VALUES ('$rollno', '$name','$city','$pcon','$std','$imagename')";
         
-        $run = myqli_query($con,$qry);
+        $run = mysqli_query($con,$qry);
         
         if($run == true)
         {

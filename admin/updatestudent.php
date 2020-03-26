@@ -22,13 +22,13 @@ session_start();
    <tr>
        <th>Enter Standerd</th>
        <td>
-           <input type="number" name="standerd" placeholder="Enter Standerd" required="required">
+           <input type="number" name="standerd" placeholder="Enter Standerd" required="required"/>
        </td>
        <th>Enter Student Name</th>
        <td>
-           <input type="text" name="stuname"  placeholder="Enter Student Name" required="required">
+           <input type="text" name="stuname"  placeholder="Enter Student Name" required="required"/>
        </td>
-       <td colspan="2"><input type="submit" name="submit" value="Search"></td>
+       <td colspan="2"><input type="submit" name="submit" value="Search"/></td>
    </tr>
     
     
@@ -44,14 +44,14 @@ session_start();
     </tr>
     <?php
 
-    if(isset($_post['submit']))
+    if(isset($_POST['submit']))
     {
         include('../dbcon.php');
         
-        $standerd = $_post['standerd'];
-        $name = $_post['stuname'];
+        $standerd = $_POST['standerd'];
+        $name = $_POST['stuname'];
         
-        $sql="SELECT * FROM `student` WHERE `standerd`='' AND `name` LIKE '%name%'";  
+        $sql="SELECT * FROM `student` WHERE `standerd`='$standerd' AND `name` LIKE '%$name%'";  
     
         $run=mysqli_query($con,$sql);
         
@@ -68,18 +68,16 @@ session_start();
                 ?>
                 <tr align="center">
                     <td><?php echo $count; ?></td>
-                    <td><img src="../dataimg/<?php echo $data['image']; ?>" /></td>
+                    <td><img src="../dataimg/<?php echo $data['image']; ?>" style="max-width:100px;"/></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['rollno']; ?></td>
-                    <td>><a href="updateform.php?sid=<?php echo $data['id'];?>">Edit</a></td>
+                    <td><a href="updateform.php?sid=<?php echo $data['id'];?>">Edit</a></td>
                 </tr>
                 <?php
             }
         }
     
     }
-
-
-
 ?>
 </table>
+
