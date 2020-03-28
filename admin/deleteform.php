@@ -11,11 +11,12 @@ include('../dbcon.php');
         if($run == true)
         {
             ?>
-        <script>
-            alert('Data Deleted Successfully.');
-            window.open('deletestudent.php','_self');
-        </script>
-       <?php
+<script>
+    alert('Data Deleted Successfully.');
+    window.open('deletestudent.php', '_self');
+
+</script>
+<?php
         }
      
 

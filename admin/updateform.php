@@ -10,6 +10,7 @@ session_start();
     {
         header('location: ../login.php');
     }
+
 ?>
 <?php
 

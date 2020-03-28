@@ -49,6 +49,7 @@ session_start();
     </table>
 </form>
 </body>
+
 </html>
 
 <?php
@@ -74,10 +75,11 @@ session_start();
         if($run == true)
         {
             ?>
-        <script>
-            alert('Data Inserted Successfully.');
-        </script>
-       <?php
+<script>
+    alert('Data Inserted Successfully.');
+
+</script>
+<?php
         }
         
         
