@@ -17,6 +17,7 @@ session_start();
     include('header.php');
     include('titlehead.php');
     include('../dbcon.php');
+
     $sid = $_GET['sid'];
 
     $sql="SELECT *  FROM `student` WHERE `id`='$sid' ";
@@ -54,7 +55,6 @@ session_start();
         <tr>
             <td colspan="2" align="center">
             <input type="hidden" name="sid" value="<?php echo $data['id'];?>"/>
-            
             <input type="submit" name="submit" value="Submit"/></td>
         </tr>
     </table>

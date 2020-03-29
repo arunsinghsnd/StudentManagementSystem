@@ -1,5 +1,5 @@
 <?php
-include('../dbcon.php');
+        include('../dbcon.php');
         $rollno = $_POST['rollno'];
         $name  = $_POST['name'];
         $city  = $_POST['city'];
@@ -13,13 +13,13 @@ include('../dbcon.php');
         
     
         
-        $qry="UPDATE `student` SET `rollno` = '$rollno', `name` = '$name', `city` = '$city', `pcont` = '$pcon', `standerd` = '$std' , `image` = '$imagename' , WHERE `id` = $id ;"; 
+        $qry="UPDATE `student` SET  `rollno` = '$rollno', `name` = '$name', `city` = '$city', `pcont` = '$pcon', `standerd` = '$std' , `image`='$imagename' WHERE `id` = $id;"; 
         
         $run = mysqli_query($con,$qry);
         
-        if($run === true)
+        if($run == true)
         {
-            ?>
+          ?>
 <script>
     alert('Data Updated Successfully.');
     window.open('updateform.php?sid=<?php echo $id;?>', '_self');

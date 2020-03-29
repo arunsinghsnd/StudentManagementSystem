@@ -77,11 +77,10 @@ session_start();
             ?>
 <script>
     alert('Data Inserted Successfully.');
-
 </script>
 <?php
         }
-        
+       
         
     }
 ?>
